@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Calendar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div style="padding: 20px;">
+    <button id="prev">◀️</button>
+    <button id="next">▶️</button>
+    <input type="text" id="search" placeholder="Search events...">
+    <select id="filter">
+      <option value="all">All Colors</option>
+      <option value="#4caf50">Green</option>
+      <option value="#f44336">Red</option>
+      <option value="#2196f3">Blue</option>
+    </select>
+    <button id="toggleView">Switch to Weekly View</button>
+  </div>
+
+  <div id="monthYear" style="text-align:center; font-size: 24px; margin-top: 10px;"></div>
+  <div id="calendar" class="calendar"></div>
+
+  <!-- Event Form -->
+  <div id="eventForm" class="event-form">
+    <div class="form-content">
+      <span class="closeBtn">&times;</span>
+      <h2>Add/Edit Event</h2>
+      <input type="date" id="date">
+      <input type="text" id="title" placeholder="Event Title">
+      <input type="color" id="color">
+      <select id="recurrence">
+        <option value="none">No Recurrence</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+      </select>
+      <button id="saveEvent">Save</button>
+      <button id="deleteEvent">Delete</button>
+    </div>
+  </div>
+
+  <!-- Conflict Popup -->
+  <div id="conflictPopup" class="popup">
+  <div class="popup-content">
+    <span id="closeConflictPopup" class="close">&times;</span>
+    <p>There is already an event on this date.</p>
+    <button id="dismissConflict">OK</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
